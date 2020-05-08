@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/roncoo-course/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/roncoo-job/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/roncoo-model/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/roncoo-server-config/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/roncoo-system/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/roncoo-user/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/roncoo-utils/src/main/java" charset="UTF-8" />
   </component>
 </project>
