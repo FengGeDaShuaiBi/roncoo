@@ -7,16 +7,20 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="roncoo-job" />
+        <module name="roncoo-auth" />
         <module name="roncoo-system" />
         <module name="roncoo-course" />
         <module name="roncoo-model" />
         <module name="roncoo-server-config" />
         <module name="roncoo-user" />
         <module name="roncoo-utils" />
+        <module name="roncoo-authentication" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="roncoo" target="1.8" />
+      <module name="roncoo-auth" target="1.8" />
+      <module name="roncoo-authentication" target="1.8" />
       <module name="roncoo-course" target="1.8" />
       <module name="roncoo-job" target="1.8" />
       <module name="roncoo-model" target="1.8" />
@@ -29,6 +33,8 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="roncoo" options="-parameters" />
+      <module name="roncoo-auth" options="-parameters" />
+      <module name="roncoo-authentication" options="-parameters" />
       <module name="roncoo-course" options="-parameters" />
       <module name="roncoo-job" options="-parameters" />
       <module name="roncoo-model" options="-parameters" />

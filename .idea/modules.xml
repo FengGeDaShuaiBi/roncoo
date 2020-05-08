@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/roncoo.iml" filepath="$PROJECT_DIR$/roncoo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/roncoo-auth/roncoo-auth.iml" filepath="$PROJECT_DIR$/roncoo-auth/roncoo-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/roncoo-authentication/roncoo-authentication.iml" filepath="$PROJECT_DIR$/roncoo-authentication/roncoo-authentication.iml" />
       <module fileurl="file://$PROJECT_DIR$/roncoo-course/roncoo-course.iml" filepath="$PROJECT_DIR$/roncoo-course/roncoo-course.iml" />
       <module fileurl="file://$PROJECT_DIR$/roncoo-job/roncoo-job.iml" filepath="$PROJECT_DIR$/roncoo-job/roncoo-job.iml" />
       <module fileurl="file://$PROJECT_DIR$/roncoo-model/roncoo-model.iml" filepath="$PROJECT_DIR$/roncoo-model/roncoo-model.iml" />
