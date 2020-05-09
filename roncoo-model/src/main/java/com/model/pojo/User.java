@@ -12,15 +12,24 @@ import java.util.List;
 public class User implements UserDetails {
 
 
-    private Integer id;//主键
+    private long id;//主键
     private Date gmt_create;//创建时间
     private Date gmt_modified;//修改时间
     private Integer status_id;//状态(1:正常，0:禁用)
     private Integer sort;//排序
     private Integer user_no;//用户编号
     private String user_name;//用户名
-    private Integer mobile;//手机号码
-    private String mobile_psw;//登录密码
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    private String mobile;//手机号码
+    private String mobile_pas;//登录密码
     private String remark;//备注
     private List<Role> roles;//角色列表
 
@@ -56,14 +65,6 @@ public class User implements UserDetails {
         this.user_name = user_name;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public Date getGmt_create() {
         return gmt_create;
     }
@@ -96,20 +97,20 @@ public class User implements UserDetails {
         this.user_no = user_no;
     }
 
-    public Integer getMobile() {
+    public String getMobile() {
         return mobile;
     }
 
-    public void setMobile(Integer mobile) {
+    public void setMobile(String mobile) {
         this.mobile = mobile;
     }
 
     public String getMobile_psw() {
-        return mobile_psw;
+        return mobile_pas;
     }
 
-    public void setMobile_psw(String mobile_psw) {
-        this.mobile_psw = mobile_psw;
+    public void setMobile_psw(String mobile_pas) {
+        this.mobile_pas = mobile_pas;
     }
 
     @Override
@@ -124,7 +125,7 @@ public class User implements UserDetails {
 
     @Override
     public String getPassword() {
-        return mobile_psw;
+        return mobile_pas;
     }
 
     @Override

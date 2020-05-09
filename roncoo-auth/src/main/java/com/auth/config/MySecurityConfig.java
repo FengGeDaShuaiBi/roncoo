@@ -26,9 +26,9 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userService);
     }
 
-    @Override
+   /* @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers("/admin/**").hasRole("admin").antMatchers("/user/**").access("hasAnyRole('user','admin')").anyRequest().authenticated().and().formLogin().permitAll().and().csrf().disable();
-    }
+    }*/
 
 }

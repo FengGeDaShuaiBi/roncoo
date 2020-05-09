@@ -17,7 +17,6 @@ public class UserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userMapper.loadUserByUsername(username);
-        System.out.println(user.getUser_name());
         if (user == null)
             throw new UsernameNotFoundException("当前账号不存在");
         user.setRoles(userMapper.getRoleByUserId(user.getId()));

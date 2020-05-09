@@ -4,7 +4,7 @@
 <mapper namespace="com.model.dao.UserMapper">
 
     <select id="loadUserByUsername" resultType="com.model.pojo.User">
-        select * from sys_user where user_name = #{username}"
+        select * from sys_user where user_name = #{username}
     </select>
 
     <select id="getRoleByUserId" resultType="com.model.pojo.Role">

@@ -12,6 +12,6 @@ public interface UserMapper {
 
     public User loadUserByUsername(@Param("username") String username);
 
-    public List<Role> getRoleByUserId(@Param("id") Integer id);
+    public List<Role> getRoleByUserId(@Param("id") long id);
 
 }
