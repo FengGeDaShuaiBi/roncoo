@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.model.dao.WebsiteMapper">
+
+    <select id="getWebsiteLinkByPage" resultType="com.model.pojo.Website_Link">
+        SELECT * FROM `website_link`
+        <where>
+            <if test="link_name != '' and link_name != null">
+                `link_name` =#{link_name}
+            </if>
+            <if test="status_id != '' and status_id != null">
+                 and `status_id` = #{status_id}
+            </if>
+        </where>
+    </select>
+
+</mapper>

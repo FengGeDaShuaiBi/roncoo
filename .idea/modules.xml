@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/roncoo-system/roncoo-system.iml" filepath="$PROJECT_DIR$/roncoo-system/roncoo-system.iml" />
       <module fileurl="file://$PROJECT_DIR$/roncoo-user/roncoo-user.iml" filepath="$PROJECT_DIR$/roncoo-user/roncoo-user.iml" />
       <module fileurl="file://$PROJECT_DIR$/roncoo-utils/roncoo-utils.iml" filepath="$PROJECT_DIR$/roncoo-utils/roncoo-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/roncoo-website/roncoo-website.iml" filepath="$PROJECT_DIR$/roncoo-website/roncoo-website.iml" />
     </modules>
   </component>
 </project>

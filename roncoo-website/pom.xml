@@ -9,14 +9,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>roncoo-auth</artifactId>
+    <artifactId>roncoo-website</artifactId>
 
     <dependencies>
         <dependency>
-        <groupId>org.roncoo</groupId>
-        <artifactId>roncoo-model</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </dependency>
+            <groupId>org.roncoo</groupId>
+            <artifactId>roncoo-model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>

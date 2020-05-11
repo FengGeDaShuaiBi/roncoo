@@ -9,12 +9,13 @@
         <module name="roncoo-job" />
         <module name="roncoo-auth" />
         <module name="roncoo-system" />
+        <module name="roncoo-website" />
         <module name="roncoo-course" />
-        <module name="roncoo-model" />
         <module name="roncoo-server-config" />
         <module name="roncoo-user" />
-        <module name="roncoo-utils" />
+        <module name="roncoo-model" />
         <module name="roncoo-authentication" />
+        <module name="roncoo-utils" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -28,6 +29,7 @@
       <module name="roncoo-system" target="1.8" />
       <module name="roncoo-user" target="1.8" />
       <module name="roncoo-utils" target="1.8" />
+      <module name="roncoo-website" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -42,6 +44,7 @@
       <module name="roncoo-system" options="-parameters" />
       <module name="roncoo-user" options="-parameters" />
       <module name="roncoo-utils" options="-parameters" />
+      <module name="roncoo-website" options="-parameters" />
     </option>
   </component>
 </project>

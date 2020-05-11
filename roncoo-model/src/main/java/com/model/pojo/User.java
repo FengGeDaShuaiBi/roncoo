@@ -17,6 +17,7 @@ public class User implements UserDetails {
     private Date gmt_modified;//修改时间
     private Integer status_id;//状态(1:正常，0:禁用)
     private Integer sort;//排序
+
     private Integer user_no;//用户编号
     private String user_name;//用户名
 
