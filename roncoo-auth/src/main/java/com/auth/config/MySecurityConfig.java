@@ -4,11 +4,13 @@ import com.auth.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.ObjectPostProcessor;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 
 @Configuration
 public class MySecurityConfig extends WebSecurityConfigurerAdapter {
@@ -26,9 +28,24 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userService);
     }
 
-   /* @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/admin/**").hasRole("admin").antMatchers("/user/**").access("hasAnyRole('user','admin')").anyRequest().authenticated().and().formLogin().permitAll().and().csrf().disable();
-    }*/
+    @Bean
+    CustomFilterInvocationSecurityMetadataSource cfisms() {
+        return new CustomFilterInvocationSecurityMetadataSource();
+    }
 
+    @Bean
+    CustomAccessDecisionManager cadm() {
+        return new CustomAccessDecisionManager();
+    }
+
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests().withObjectPostProcessor(new ObjectPostProcessor<FilterSecurityInterceptor>() {
+            @Override
+            public <O extends FilterSecurityInterceptor> O postProcess(O object) {
+                object.setSecurityMetadataSource(cfisms());
+                object.setAccessDecisionManager(cadm());
+                return object;
+            }
+        }).and().formLogin().loginProcessingUrl("/login").permitAll().and().csrf().disable();
+    }
 }

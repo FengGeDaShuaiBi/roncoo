@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.model.dao.MenuMapper">
+
+
+    <resultMap id="BaseResultMap" type="com.model.generator.pojo.SysMenu">
+        <id property="id" column="id"/>
+        <result property="gmtCreate" column="gmt_create"/>
+        <result property="gmtModified" column="gmt_modified"/>
+        <result property="statusId" column="status_id"/>
+        <result property="sort" column="sort"/>
+        <result property="parentId" column="parent_id"/>
+        <result property="menuName" column="menu_name"/>
+        <result property="menuUrl" column="menu_url"/>
+        <result property="apiUrl" column="api_url"/>
+        <result property="menuIcon" column="menu_icon"/>
+        <result property="remark" column="remark"/>
+        <result property="menuType" column="menu_type"/>
+        <collection property="roles" ofType="com.model.generator.pojo.SysRole">
+            <id property="id" column="rid"/>
+            <result property="gmtCreate" column="rgmtcreate"/>
+            <result property="gmtModified" column="rgmtmodified"/>
+            <result property="statusId" column="rstatusid"/>
+            <result property="sort" column="rsort"/>
+            <result property="roleName" column="rrolename"/>
+            <result property="remark" column="rremark"/>
+        </collection>
+    </resultMap>
+
+    <select id="getMenuAll" resultMap="BaseResultMap">
+   SELECT sm.*,sr.`id`AS rid,sr.`gmt_create` AS rgmt_create,sr.`gmt_modified` AS rgmt_modified, sr.`remark` AS rremark, sr.`sort` AS rsort , sr.`status_id` AS rstatusid, sr.`role_name` AS rrolename FROM `sys_menu` sm, `sys_menu_role` smr , `sys_role` sr  WHERE smr.`menu_id`= sm.`id` AND sr.`id` = smr.`role_id`
+  </select>
+
+</mapper>
