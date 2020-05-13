@@ -19,7 +19,7 @@ public class DemoController {
     UserService userService;
 
     @ApiOperation(value = "测试接口", notes = "测试接口")
-    @GetMapping("/order/orderInfo")
+    @GetMapping("/update/api")
     public String demo() {
         /*Adv adv = new Adv();
         adv.setGmtCreate(new Date());

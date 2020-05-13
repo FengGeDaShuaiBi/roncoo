@@ -31,5 +31,8 @@
     <select id="getMenuAll" resultMap="BaseResultMap">
    SELECT sm.*,sr.`id`AS rid,sr.`gmt_create` AS rgmt_create,sr.`gmt_modified` AS rgmt_modified, sr.`remark` AS rremark, sr.`sort` AS rsort , sr.`status_id` AS rstatusid, sr.`role_name` AS rrolename FROM `sys_menu` sm, `sys_menu_role` smr , `sys_role` sr  WHERE smr.`menu_id`= sm.`id` AND sr.`id` = smr.`role_id`
   </select>
+    <update id="update">
+        UPDATE `course` SET `course_name` =#{course_name} where id = #{id}
+   </update>
 
 </mapper>

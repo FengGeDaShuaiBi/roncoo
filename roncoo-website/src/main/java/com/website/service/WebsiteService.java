@@ -1,8 +1,8 @@
 package com.website.service;
 
-import com.model.dao.WebsiteMapper;
-import com.model.pojo.Website_Link;
-import com.utils.page.WebsiteLinkPage;
+import com.model.generator.mapper.WebsiteLinkMapper;
+import com.model.generator.mapper.WebsiteNavMapper;
+import com.model.generator.pojo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +12,18 @@ import java.util.List;
 public class WebsiteService {
 
     @Autowired
-    WebsiteMapper websiteMapper;
+    WebsiteLinkMapper websiteLinkMapper;
 
-    public List<Website_Link> getWebsiteLinkByPage(WebsiteLinkPage page) throws Exception {
-        return websiteMapper.getWebsiteLinkByPage(page);
+    @Autowired
+    WebsiteNavMapper websiteNavMapper;
+
+    public List<WebsiteLink> getWebsiteLinkByPage(WebsiteLinkExample example) throws Exception {
+        return websiteLinkMapper.selectByExample(example);
     }
+
+    public List<WebsiteNav> getWebsiteNavByPage(WebsiteNavExample example) throws Exception {
+        return websiteNavMapper.selectByExample(example);
+    }
+
 
 }

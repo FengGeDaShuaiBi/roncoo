@@ -8,4 +8,6 @@ import java.util.List;
 @Mapper
 public interface MenuMapper {
     List<SysMenu> getMenuAll();
+
+    int update(String course_name, long id);
 }
