@@ -10,6 +10,16 @@ import java.math.BigDecimal;
 @ApiModel(value = "CreateLecturerVo", description = "CreateLecturerVo")
 public class CreateLecturerVo {
 
+    private long id;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     private Byte statusId;
 
     private Integer sort;

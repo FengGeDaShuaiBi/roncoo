@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="roncoo-job" />
+        <module name="roncoo-pay" />
         <module name="roncoo-auth" />
+        <module name="roncoo-job" />
         <module name="roncoo-system" />
         <module name="roncoo-website" />
         <module name="roncoo-course" />
@@ -24,7 +25,9 @@
       <module name="roncoo-authentication" target="1.8" />
       <module name="roncoo-course" target="1.8" />
       <module name="roncoo-job" target="1.8" />
+      <module name="roncoo-mail" target="1.8" />
       <module name="roncoo-model" target="1.8" />
+      <module name="roncoo-pay" target="1.8" />
       <module name="roncoo-server-config" target="1.8" />
       <module name="roncoo-system" target="1.8" />
       <module name="roncoo-user" target="1.8" />
@@ -40,6 +43,7 @@
       <module name="roncoo-course" options="-parameters" />
       <module name="roncoo-job" options="-parameters" />
       <module name="roncoo-model" options="-parameters" />
+      <module name="roncoo-pay" options="-parameters" />
       <module name="roncoo-server-config" options="-parameters" />
       <module name="roncoo-system" options="-parameters" />
       <module name="roncoo-user" options="-parameters" />

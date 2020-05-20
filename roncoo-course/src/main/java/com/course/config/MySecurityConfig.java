@@ -39,13 +39,13 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().withObjectPostProcessor(new ObjectPostProcessor<FilterSecurityInterceptor>() {
+        http.csrf().disable().authorizeRequests().withObjectPostProcessor(new ObjectPostProcessor<FilterSecurityInterceptor>() {
             @Override
             public <O extends FilterSecurityInterceptor> O postProcess(O object) {
                 object.setSecurityMetadataSource(cfisms());
                 object.setAccessDecisionManager(cadm());
                 return object;
             }
-        }).and().formLogin().loginProcessingUrl("/login").permitAll().and().csrf().disable();
+        }).anyRequest().authenticated().and().formLogin().loginProcessingUrl("/login").permitAll().and().csrf().disable();
     }
 }

@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/roncoo-course/roncoo-course.iml" filepath="$PROJECT_DIR$/roncoo-course/roncoo-course.iml" />
       <module fileurl="file://$PROJECT_DIR$/roncoo-job/roncoo-job.iml" filepath="$PROJECT_DIR$/roncoo-job/roncoo-job.iml" />
       <module fileurl="file://$PROJECT_DIR$/roncoo-model/roncoo-model.iml" filepath="$PROJECT_DIR$/roncoo-model/roncoo-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/roncoo-pay/roncoo-pay.iml" filepath="$PROJECT_DIR$/roncoo-pay/roncoo-pay.iml" />
       <module fileurl="file://$PROJECT_DIR$/roncoo-server-config/roncoo-server-config.iml" filepath="$PROJECT_DIR$/roncoo-server-config/roncoo-server-config.iml" />
       <module fileurl="file://$PROJECT_DIR$/roncoo-system/roncoo-system.iml" filepath="$PROJECT_DIR$/roncoo-system/roncoo-system.iml" />
       <module fileurl="file://$PROJECT_DIR$/roncoo-user/roncoo-user.iml" filepath="$PROJECT_DIR$/roncoo-user/roncoo-user.iml" />

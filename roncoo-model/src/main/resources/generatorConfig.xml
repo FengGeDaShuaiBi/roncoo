@@ -48,7 +48,8 @@
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
         <!-- 指定数据库表 -->
-        <table schema="" tableName="course_audit"></table>
+        <table schema="" tableName="seckill_promotion_table"></table>
+        <!--<table schema="" tableName="course_audit"></table>
         <table schema="" tableName="course_category"></table>
         <table schema="" tableName="course_chapter"></table>
         <table schema="" tableName="course_chapter_audit"></table>
@@ -91,6 +92,6 @@
         <table schema="" tableName="website_nav_article"></table>
         <table schema="" tableName="zone"></table>
         <table schema="" tableName="zone_course"></table>
-        <table schema="" tableName="lecturer"></table>
+        <table schema="" tableName="lecturer"></table>-->
     </context>
 </generatorConfiguration>

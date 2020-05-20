@@ -1,6 +1,6 @@
 package com.auth.service;
 
-import com.model.dao.UserMapper;
+import com.model.dao.User1Mapper;
 import com.model.generator.mapper.AdvMapper;
 import com.model.generator.pojo.Adv;
 import com.model.generator.pojo.AdvExample;
@@ -17,14 +17,14 @@ import java.util.List;
 public class UserService implements UserDetailsService {
 
     @Autowired
-    UserMapper userMapper;
+    User1Mapper user1Mapper;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userMapper.loadUserByUsername(username);
+        User user = user1Mapper.loadUserByUsername(username);
         if (user == null)
             throw new UsernameNotFoundException("当前账号不存在");
-        user.setRoles(userMapper.getRoleByUserId(user.getId()));
+        user.setRoles(user1Mapper.getRoleByUserId(user.getId()));
         return user;
     }
 

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <title>扫码支付</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="/qrcode.min.js" ></script>
+</head>
+<body style="margin: 50px auto;text-align: center;">
+<header  >
+    <h1>扫码支付</h1>
+</header>
+<div id="main" style="margin: 0px auto;">
+    <div id="qrcode" style="width:180px; height:180px; margin: 0px auto;"></div>
+
+</div>
+</body>
+<script th:inline="javascript" >
+    var url=[[${url}]]
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        width : 180,
+        height : 180,
+        text: url
+    });
+</script>
+</html>
