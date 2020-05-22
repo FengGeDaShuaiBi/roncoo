@@ -1,8 +1,9 @@
 package com.model.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Role {
+public class Role implements Serializable {
 
     private long id;//主键
     private Date gmt_create;//创建时间

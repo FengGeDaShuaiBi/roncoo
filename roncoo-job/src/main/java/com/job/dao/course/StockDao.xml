@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.job.dao.course.StockDao">
+
+    <resultMap type="com.job.entity.Stock" id="StockMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="stock" column="stock" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <resultMap type="com.job.entity.Stock" id="StockMap1">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="stock" column="stock" jdbcType="INTEGER"/>
+        <result property="startTime" column="start_time" jdbcType="DATE"/>
+        <result property="endTime" column="end_time" jdbcType="DATE"/>
+    </resultMap>
+
+    <update id="delStockOne">
+        update stock as t set t.stock=t.stock-1 where t.name=#{stockName}
+    </update>
+
+    <update id="updateStock">
+        UPDATE `stock` SET `stock` = `stock` + 1 WHERE `id` = #{socktId}
+    </update>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="StockMap">
+        select
+          id, name, stock
+        from stock
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="StockMap">
+        select
+          id, name, stock
+        from stock
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="StockMap">
+        select
+        id, name, stock
+        from stock
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="stock != null">
+                and stock = #{stock}
+            </if>
+        </where>
+    </select>
+
+
+    <select id="queryStockAll" resultMap="StockMap1">
+        SELECT * FROM `stock` WHERE NOW() BETWEEN `start_time` AND `end_time`
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO `stock_order`(`stockId`,`userId`,`create`,`order_status`) VALUE(#{stockId},#{userId},#{create},#{order_statue})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update stock
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="stock != null">
+                stock = #{stock},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from stock where id = #{id}
+    </delete>
+
+</mapper>

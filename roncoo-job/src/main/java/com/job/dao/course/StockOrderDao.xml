@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.job.dao.course.StockOrderDao">
+
+    <resultMap type="com.job.entity.StockOrder" id="StockOrderMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="stockId" column="stockId" jdbcType="VARCHAR"/>
+        <result property="userId" column="userId" jdbcType="VARCHAR"/>
+        <result property="create" column="create" jdbcType="TIMESTAMP"/>
+        <result property="orderStatus" column="order_status" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="countOrderStatus" resultType="int">
+        select count(order_status) from stock_order where order_status=#{status}
+    </select>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="StockOrderMap">
+        select
+          *
+        from stock_order
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="StockOrderMap">
+        select
+          *
+        from stock_order
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="StockOrderMap">
+        select
+        *
+        from stock_order
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="orderName != null and orderName != ''">
+                and order_name = #{orderName}
+            </if>
+            <if test="orderUser != null and orderUser != ''">
+                and order_user = #{orderUser}
+            </if>
+            <if test="create != null">
+                and `create` = #{create}
+            </if>
+            <if test="orderStatus != null">
+                and order_status = #{orderStatus}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" useGeneratedKeys="true">
+        insert into stock_order(stockId, userId, `create`, order_status)
+        values (#{stockId}, #{userId}, #{create}, #{orderStatus})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update stock_order
+        <set>
+            <if test="orderName != null and orderName != ''">
+                order_name = #{orderName},
+            </if>
+            <if test="orderUser != null and orderUser != ''">
+                order_user = #{orderUser},
+            </if>
+            <if test="create != null">
+                `create` = #{create},
+            </if>
+            <if test="orderStatus != null">
+                order_status = #{orderStatus},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from stock_order where id = #{id}
+    </delete>
+
+    <delete id="deOrder">
+        delete from stock_order where order_status=#{status}
+    </delete>
+
+    <!--查询十五分钟外未支付的订单-->
+    <select id="getOrderByTime" resultMap="StockOrderMap">
+        select * from `stock_order` where TIMESTAMPDIFF(MINUTE,`create`,now()) > 15 and `order_status` = 0
+    </select>
+
+    <update id="updateOrderStatusById">
+        UPDATE `stock_order` SET `order_status` = #{statusId} WHERE `id` = #{orderId}
+    </update>
+
+</mapper>

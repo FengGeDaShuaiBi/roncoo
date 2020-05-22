@@ -17,7 +17,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-@ComponentScan(basePackages = {"com.auth.controller"})
+@ComponentScan(basePackages = {"com.auth"})
 public class Swagger2 extends WebMvcConfigurationSupport {
 
     private ApiInfo apiInfo() {
